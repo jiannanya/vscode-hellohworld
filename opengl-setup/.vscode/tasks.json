@@ -1,0 +1,37 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "C/C++: clang++.exe build task",
+			"command": "D:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\Llvm\\x64\\bin\\clang.exe",//"F:\\cc\\programs\\Qt\\Tools\\mingw810_64\\bin\\g++.exe",//
+			"args": [
+				//"-fdiagnostics-color=always",
+				"-g",
+				"${file}",
+				"${workspaceFolder}\\glad.c",
+				"-I${workspaceFolder}\\vender\\include",
+				"-L${workspaceFolder}\\vender\\glfw3\\lib",
+				"-lopengl32",
+				// "-luser32",
+				// "-lShell32",
+				// "-lgdi32",
+				"-lglfw3dll",// vscode task 直接使用glfw3.lib 静态链接会出现链接错误，但使用动态链接则不会，原因未知，但使用cmake则可以静态链接
+				"-o",
+				"${workspaceFolder}\\build\\${fileBasenameNoExtension}.exe",
+				//"-v"
+			],
+			"options": {
+				"cwd": "D:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\Llvm\\x64\\bin"
+			},
+			"problemMatcher": [
+				"$msCompile"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "编译器: \"D:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\Llvm\\x64\\bin\\clang.exe\""
+		}
+	]
+}
